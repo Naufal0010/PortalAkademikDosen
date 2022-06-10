@@ -14,29 +14,21 @@ import '../../utils/service/util_preference.dart';
 * */
 
 class NetworkRepository {
-
   String? username = UtilPreferences.getString('username');
 
   static ApiConsumer consumer = ApiConsumer(
       apiUrl: !kDebugMode
           ? 'http://api-siapps.gov.id/api'
           : 'https://git.ulm.ac.id/api-siapps/public/api',
-      appId: 'PortalAkademik',
+      appId: 'PortalAkademikDosen',
       apiKey: '605dafe39ee0780e8cf2c829434eea11',
       apiTimeout: 20);
 
-  // getUserEditable() untuk mengambil data mahasiswa yang bisa di-edit atau diubah
-  Future<ApiModel> getUserEditable() async {
-    return await consumer.execute(url: '/akademik/mahasiswa/profil/$username');
-  }
-
   // getUser() untuk mengambil data mahasiswa dengan program studi dari API
   Future<ApiModel> getUser() async {
-    return await consumer.execute(url: '/mahasiswa/$username?with[]=prodi');
-  }
-
-  Future<ApiModel> getUserMahasiswaKhsSemester() async {
-    return await consumer.execute(url: '/akademik/khs/riwayatSemester/$username');
+    return await consumer.execute(
+        url:
+            '/simpeg/dosen/19880925201703110001?with[]=prodi&with[]=jurusan&with[]=fakultas');
   }
 
   // refreshToken() jika access token expired
@@ -54,7 +46,6 @@ class NetworkRepository {
       return null;
     }
   }
-
 
   // auth() untuk mengautensikasi user jika ingin login menggunakan username dan password
   Future auth(String? username, String? password) async {

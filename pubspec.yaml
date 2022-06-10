@@ -21,11 +21,29 @@ dependencies:
   pretty_dio_logger: ^1.1.1
   dio_log: ^2.0.2
 
+  simple_fontellico_progress_dialog: ^0.2.1
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   flutter_lints: ^1.0.0
+  flutter_native_splash: ^2.1.1
+
+
+flutter_native_splash:
+  image: assets/images/ulm_logo.png
+  color: "#FFFFFF"
+  # background_image: assets/images/background.png
+  fullscreen: true
+  android: true
+  ios: true
+  web: false
+
+  android_12:
+    image: assets/images/ulm_logo.png
+    icon_background_color: "#FFFFFF"
 
 flutter:
 

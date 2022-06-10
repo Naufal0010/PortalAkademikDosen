@@ -1,26 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:portal_akademik_dosen/states/state.dart';
-import 'package:portal_akademik_dosen/ui/dashboard_page.dart';
-import 'package:portal_akademik_dosen/ui/login_page.dart';
-import 'package:provider/provider.dart';
+import 'package:portal_akademik_dosen/ui/base_page.dart';
+import 'package:portal_akademik_dosen/ui/login/login_page.dart';
 
 class App extends StatelessWidget {
+  static final navigatorKey = GlobalKey<NavigatorState>();
+
+  App({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => AuthState())
-      ],
+      providers: [ChangeNotifierProvider(create: (_) => AuthState())],
       child: GestureDetector(
         onTap: () {
           FocusScope.of(context).requestFocus(FocusNode());
         },
         child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          navigatorKey: navigatorKey,
           home: WillPopScope(
             child: Consumer<AuthState>(
               builder: (context, percentDone, child) {
-                return context.watch<AuthState>().isLogged ? DashboardPage() : LoginPage();
+                return context.watch<AuthState>().isLogged
+                    ? BasePage()
+                    : const LoginPage();
               },
             ),
             onWillPop: onWillPop,
@@ -37,7 +41,7 @@ class App extends StatelessWidget {
   Future<bool> onWillPop() {
     DateTime now = DateTime.now();
     if (currentBackPressTime == null ||
-      now.difference(currentBackPressTime!) > const Duration(seconds: 2)) {
+        now.difference(currentBackPressTime!) > const Duration(seconds: 2)) {
       currentBackPressTime = now;
       return Future.value(false);
     }

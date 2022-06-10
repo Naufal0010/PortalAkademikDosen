@@ -1,21 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:portal_akademik_dosen/app.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+import 'config/application.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  Application.preferences = await SharedPreferences.getInstance();
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-      ),
-      home:  App(),
-    );
-  }
+  runApp(App());
 }
 
