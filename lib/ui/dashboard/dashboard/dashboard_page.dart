@@ -31,79 +31,96 @@ class _DashboardPageState extends State<DashboardPage> {
                 radius: 100.0,
               ),
             ),
-            const Text(
-              'RUDY HERTENO',
-              style: TextStyle(
-                fontSize: 50.0,
-                fontWeight: FontWeight.w400,
+            const SizedBox(height: 8),
+            Container(
+              padding: const EdgeInsets.all(2.0),
+              child: const Text(
+                'RUDY HERTENO',
+                style: TextStyle(
+                  fontSize: 50.0,
+                  fontWeight: FontWeight.w400,
+                ),
               ),
             ),
-            const Text(
-              'NIP. 19880925201703110001',
-              style: TextStyle(
-                fontSize: 20.0,
+            Container(
+              padding: const EdgeInsets.all(4.0),
+              child: const Text(
+                'NIP. 19880925201703110001',
+                style: TextStyle(
+                  fontSize: 20.0,
+                ),
               ),
             ),
+            const SizedBox(height: 2),
             Column(
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    Expanded(
-                      flex: 1,
-                      child: Text(
-                        'Jabatan',
-                        style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
+                Container(
+                  padding: const EdgeInsets.all(4.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      Expanded(
+                        flex: 1,
+                        child: Text(
+                          'Jabatan',
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
-                    ),
-                    Expanded(
-                        flex: 1,
-                        child: Text(
-                          'Dosen',
-                          style: TextStyle(fontSize: 15),
-                        )),
-                  ],
+                      Expanded(
+                          flex: 1,
+                          child: Text(
+                            'Dosen',
+                            style: TextStyle(fontSize: 15),
+                          )),
+                    ],
+                  ),
                 ),
-                Row(
-                  children: const [
-                    Expanded(
-                        flex: 1,
-                        child: Text(
-                          'Fakultas',
-                          style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        )),
-                    Expanded(
-                        flex: 1,
-                        child: Text(
-                          'Fakultas Matematika dan Ilmu Pengetahuan Alam',
-                          style: TextStyle(fontSize: 15),
-                        )),
-                  ],
+                Container(
+                  padding: const EdgeInsets.all(4.0),
+                  child: Row(
+                    children: const [
+                      Expanded(
+                          flex: 1,
+                          child: Text(
+                            'Fakultas',
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          )),
+                      Expanded(
+                          flex: 1,
+                          child: Text(
+                            'Fakultas Matematika dan Ilmu Pengetahuan Alam',
+                            style: TextStyle(fontSize: 15),
+                          )),
+                    ],
+                  ),
                 ),
-                Row(
-                  children: const [
-                    Expanded(
-                        flex: 1,
-                        child: Text(
-                          'Program Studi',
-                          style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        )),
-                    Expanded(
-                        flex: 1,
-                        child: Text(
-                          'S1-Ilmu Komputer',
-                          style: TextStyle(fontSize: 15),
-                        )),
-                  ],
+                Container(
+                  padding: const EdgeInsets.all(4.0),
+                  child: Row(
+                    children: const [
+                      Expanded(
+                          flex: 1,
+                          child: Text(
+                            'Program Studi',
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          )),
+                      Expanded(
+                          flex: 1,
+                          child: Text(
+                            'S1-Ilmu Komputer',
+                            style: TextStyle(fontSize: 15),
+                          )),
+                    ],
+                  ),
                 ),
               ],
             )
