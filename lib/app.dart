@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portal_akademik_dosen/states/state.dart';
-import 'package:portal_akademik_dosen/ui/base_page.dart';
+import 'package:portal_akademik_dosen/ui/dashboard/dashboard/dashboard_page.dart';
 import 'package:portal_akademik_dosen/ui/login/login_page.dart';
 
 class App extends StatelessWidget {
@@ -23,7 +23,7 @@ class App extends StatelessWidget {
             child: Consumer<AuthState>(
               builder: (context, percentDone, child) {
                 return context.watch<AuthState>().isLogged
-                    ? BasePage()
+                    ? const DashboardPage()
                     : const LoginPage();
               },
             ),

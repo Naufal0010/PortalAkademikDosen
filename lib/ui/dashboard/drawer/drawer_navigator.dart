@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animated_dialog/flutter_animated_dialog.dart';
 import 'package:portal_akademik_dosen/utils/color_pallete.dart';
+import 'package:simple_fontellico_progress_dialog/simple_fontico_loading.dart';
+
+import '../../../states/state.dart';
+import '../../../states/state_auth.dart';
 
 class DrawerNavigator extends StatefulWidget {
   const DrawerNavigator({Key? key}) : super(key: key);
@@ -15,7 +20,7 @@ class _DrawerNavigatorState extends State<DrawerNavigator> {
       child: Material(
         color: ColorPallete.primary,
         child: ListView(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
           children: [
             Container(
               padding: const EdgeInsets.symmetric(vertical: 20.0),
@@ -182,6 +187,23 @@ class _DrawerNavigatorState extends State<DrawerNavigator> {
   }
 
   void selectedItem(BuildContext context, int index) {
+
+    AuthState authState = Provider.of<AuthState>(context, listen: false);
+
+    SimpleFontelicoProgressDialog _dialog =
+    SimpleFontelicoProgressDialog(context: context, barrierDimisable: true);
+
+    void logout() async {
+      _dialog.show(
+          message: 'Loading...',
+          type: SimpleFontelicoProgressDialogType.normal,
+          indicatorColor: ColorPallete.primary);
+      await Future.delayed(const Duration(seconds: 1));
+      authState.logout();
+      Navigator.of(context).pop();
+      _dialog.hide();
+    }
+
     switch (index) {
       case 0:
         break;
@@ -208,6 +230,21 @@ class _DrawerNavigatorState extends State<DrawerNavigator> {
       case 11:
         break;
       case 12:
+        showAnimatedDialog(context: context, builder: (BuildContext context) {
+          return ClassicGeneralDialogWidget(
+            titleText: 'Keluar',
+            contentText: 'Ingin keluar dari akun portal akademik dosen?',
+            negativeText: 'Tidak',
+            positiveText: 'Ya',
+            positiveTextStyle: TextStyle(color: ColorPallete.primary),
+            onPositiveClick: () {
+              logout();
+            },
+            onNegativeClick: () {
+              Navigator.of(context).pop();
+            },
+          );
+        });
         break;
     }
   }
