@@ -1,6 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animated_dialog/flutter_animated_dialog.dart';
 import 'package:portal_akademik_dosen/ui/dashboard/dashboard/dashboard_page.dart';
+import 'package:portal_akademik_dosen/ui/dashboard/dashboard/jadwal/jadwal_penting_page.dart';
+import 'package:portal_akademik_dosen/ui/dashboard/dashboard/jadwal/kalender_akademik_page.dart';
+import 'package:portal_akademik_dosen/ui/dashboard/dashboard/jadwal/perkuliahan_page.dart';
+import 'package:portal_akademik_dosen/ui/dashboard/dashboard/jadwal/ujian_akhir_semester_page.dart';
+import 'package:portal_akademik_dosen/ui/dashboard/dashboard/kuesioner/hasil_evaluasi_page.dart';
+import 'package:portal_akademik_dosen/ui/dashboard/dashboard/kuesioner/kuesioner_kepuasan_page.dart';
+import 'package:portal_akademik_dosen/ui/dashboard/dashboard/penawaran/penawaranMK_page.dart';
+import 'package:portal_akademik_dosen/ui/dashboard/dashboard/penilaian/riwayat_page.dart';
+import 'package:portal_akademik_dosen/ui/dashboard/dashboard/penilaian/semester_berjalan_page.dart';
+import 'package:portal_akademik_dosen/ui/dashboard/dashboard/perwalian/perwalian_page.dart';
+import 'package:portal_akademik_dosen/ui/dashboard/dashboard/presensi/presensi_page.dart';
 import 'package:portal_akademik_dosen/utils/color_pallete.dart';
 import 'package:simple_fontellico_progress_dialog/simple_fontico_loading.dart';
 import 'package:portal_akademik_dosen/ui/dashboard/dashboard/dashboard_page.dart';
@@ -208,30 +219,63 @@ class _DrawerNavigatorState extends State<DrawerNavigator> {
     switch (index) {
       case 0:
         Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) => DashboardPage()),
+          MaterialPageRoute(builder: (context) => const DashboardPage()),
         );
         break;
       case 1:
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => PerwalianPage()),
+        );
         break;
       case 2:
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => SemesterBerjalanPage()),
+        );
         break;
       case 3:
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => RiwayatPage()),
+        );
         break;
       case 4:
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => PresensiPage()),
+        );
         break;
       case 5:
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => PenawaranMKPage()),
+        );
         break;
       case 6:
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => KalenderAkademikPage()),
+        );
         break;
       case 7:
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => JadwalPentingPage()),
+        );
         break;
       case 8:
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => PerkuliahanPage()),
+        );
         break;
       case 9:
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => UASPage()),
+        );
         break;
       case 10:
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => KuesionerKepuasanPage()),
+        );
         break;
       case 11:
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) => HasilEvaluasiPage()),
+        );
         break;
       case 12:
         showAnimatedDialog(

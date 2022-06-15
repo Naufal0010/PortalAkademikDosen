@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_cached_pdfview/flutter_cached_pdfview.dart';
 import 'package:portal_akademik_dosen/ui/dashboard/drawer/drawer_navigator.dart';
 
 class KalenderAkademikPage extends StatelessWidget {
@@ -14,6 +15,11 @@ class KalenderAkademikPage extends StatelessWidget {
             style: TextStyle(
                 color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold),
             overflow: TextOverflow.ellipsis),
+      ),
+      body: const PDF().fromUrl(
+        'https://akademik.ulm.ac.id/assets/kalender_akademik.pdf',
+        placeholder: (double progress) => Center(child: Text('$progress %')),
+        errorWidget: (dynamic error) => Center(child: Text(error.toString())),
       ),
     );
   }
