@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portal_akademik_dosen/states/profil/state_dosen_profil.dart';
 import 'package:portal_akademik_dosen/states/state.dart';
 import 'package:portal_akademik_dosen/ui/dashboard/dashboard/dashboard_page.dart';
 import 'package:portal_akademik_dosen/ui/login/login_page.dart';
@@ -11,7 +12,10 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [ChangeNotifierProvider(create: (_) => AuthState())],
+      providers: [
+        ChangeNotifierProvider(create: (_) => AuthState()),
+        ChangeNotifierProvider(create: (_) => DosenProfilState())
+      ],
       child: GestureDetector(
         onTap: () {
           FocusScope.of(context).requestFocus(FocusNode());

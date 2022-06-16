@@ -28,7 +28,7 @@ class NetworkRepository {
   Future<ApiModel> getUser() async {
     return await consumer.execute(
         url:
-            '/simpeg/dosen/19880925201703110001?with[]=prodi&with[]=jurusan&with[]=fakultas');
+            '/simpeg/dosen/$username?with[]=prodi&with[]=jurusan&with[]=fakultas');
   }
 
   // refreshToken() jika access token expired

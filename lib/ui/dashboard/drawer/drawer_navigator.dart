@@ -12,10 +12,12 @@ import 'package:portal_akademik_dosen/ui/dashboard/dashboard/penilaian/riwayat_p
 import 'package:portal_akademik_dosen/ui/dashboard/dashboard/penilaian/semester_berjalan_page.dart';
 import 'package:portal_akademik_dosen/ui/dashboard/dashboard/perwalian/perwalian_page.dart';
 import 'package:portal_akademik_dosen/ui/dashboard/dashboard/presensi/presensi_page.dart';
+import 'package:portal_akademik_dosen/ui/dashboard/drawer/component/exception_handle_drawer.dart';
 import 'package:portal_akademik_dosen/utils/color_pallete.dart';
+import 'package:portal_akademik_dosen/utils/widget/shimmer_widget.dart';
 import 'package:simple_fontellico_progress_dialog/simple_fontico_loading.dart';
-import 'package:portal_akademik_dosen/ui/dashboard/dashboard/dashboard_page.dart';
 
+import '../../../states/profil/state_dosen_profil.dart';
 import '../../../states/state.dart';
 import '../../../states/state_auth.dart';
 
@@ -29,6 +31,9 @@ class DrawerNavigator extends StatefulWidget {
 class _DrawerNavigatorState extends State<DrawerNavigator> {
   @override
   Widget build(BuildContext context) {
+    DosenProfilState user =
+        Provider.of<DosenProfilState>(context, listen: true);
+
     return Drawer(
       child: Material(
         color: ColorPallete.primary,
@@ -40,27 +45,28 @@ class _DrawerNavigatorState extends State<DrawerNavigator> {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const CircleAvatar(
-                    radius: 24,
-                    backgroundColor: Colors.grey,
-                  ),
+                  getPhotoDosenDrawer(context, user),
                   const SizedBox(
                     width: 20,
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
+                    children: [
                       SizedBox(
                         height: 4,
                       ),
-                      Text(
-                        'Rudy Herteno',
-                        style: TextStyle(fontSize: 14, color: Colors.white),
-                      ),
-                      Text(
-                        '19880925201703110001',
-                        style: TextStyle(fontSize: 12, color: Colors.white),
-                      )
+                      user.isLoading
+                          ? ShimmerWidget(
+                              width: 100,
+                              height: 10,
+                            )
+                          : getNameDosenDrawer(context, user),
+                      user.isLoading
+                          ? ShimmerWidget(
+                              width: 100,
+                              height: 10,
+                            )
+                          : getNipDosenDrawer(context, user),
                     ],
                   )
                 ],
