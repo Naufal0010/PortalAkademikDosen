@@ -31,6 +31,13 @@ class NetworkRepository {
             '/simpeg/dosen/$username?with[]=prodi&with[]=jurusan&with[]=fakultas');
   }
 
+  // ----------------------------- Jadwal Dosen ------------------------------
+
+  // getJadwaPentingDosen() untuk mengambil data jadwal penting dosen
+  Future<ApiModel> getJadwalPentingDosen() async {
+    return await consumer.execute(url: '/akademik/jadwal/penting');
+  }
+
   // refreshToken() jika access token expired
   Future refreshToken() async {
     FormData formData = FormData.fromMap({

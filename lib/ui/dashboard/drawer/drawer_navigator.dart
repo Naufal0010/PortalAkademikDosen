@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animated_dialog/flutter_animated_dialog.dart';
 import 'package:portal_akademik_dosen/ui/dashboard/dashboard/dashboard_page.dart';
-import 'package:portal_akademik_dosen/ui/dashboard/dashboard/jadwal/jadwal_penting_page.dart';
 import 'package:portal_akademik_dosen/ui/dashboard/dashboard/jadwal/kalender_akademik_page.dart';
 import 'package:portal_akademik_dosen/ui/dashboard/dashboard/jadwal/perkuliahan_page.dart';
 import 'package:portal_akademik_dosen/ui/dashboard/dashboard/jadwal/ujian_akhir_semester_page.dart';
@@ -20,6 +19,7 @@ import 'package:simple_fontellico_progress_dialog/simple_fontico_loading.dart';
 import '../../../states/profil/state_dosen_profil.dart';
 import '../../../states/state.dart';
 import '../../../states/state_auth.dart';
+import '../dashboard/jadwal/jadwalpenting/jadwal_penting_page.dart';
 
 class DrawerNavigator extends StatefulWidget {
   const DrawerNavigator({Key? key}) : super(key: key);

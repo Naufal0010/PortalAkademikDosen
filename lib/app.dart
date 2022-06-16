@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portal_akademik_dosen/states/jadwal/state_dosen_jadwal_penting.dart';
 import 'package:portal_akademik_dosen/states/profil/state_dosen_profil.dart';
 import 'package:portal_akademik_dosen/states/state.dart';
 import 'package:portal_akademik_dosen/ui/dashboard/dashboard/dashboard_page.dart';
@@ -14,7 +15,8 @@ class App extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => AuthState()),
-        ChangeNotifierProvider(create: (_) => DosenProfilState())
+        ChangeNotifierProvider(create: (_) => DosenProfilState()),
+        ChangeNotifierProvider(create: (_) => DosenJadwalPentingState()),
       ],
       child: GestureDetector(
         onTap: () {
