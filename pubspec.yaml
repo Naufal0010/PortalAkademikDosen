@@ -13,6 +13,8 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   fluttertoast: ^8.0.9
+  flutter_cached_pdfview: ^0.4.1
+  shimmer: ^2.0.0
 
   # network dependency
   dio: ^4.0.4
