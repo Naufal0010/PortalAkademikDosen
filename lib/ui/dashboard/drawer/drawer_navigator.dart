@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animated_dialog/flutter_animated_dialog.dart';
 import 'package:portal_akademik_dosen/ui/dashboard/dashboard/dashboard_page.dart';
-import 'package:portal_akademik_dosen/ui/dashboard/dashboard/jadwal/kalender_akademik_page.dart';
-import 'package:portal_akademik_dosen/ui/dashboard/dashboard/jadwal/perkuliahan_page.dart';
+import 'package:portal_akademik_dosen/ui/dashboard/dashboard/jadwal/kalenderakademik/kalender_akademik_page.dart';
+import 'package:portal_akademik_dosen/ui/dashboard/dashboard/jadwal/perkuliahan/perkuliahan_page.dart';
 import 'package:portal_akademik_dosen/ui/dashboard/dashboard/jadwal/ujian_akhir_semester_page.dart';
 import 'package:portal_akademik_dosen/ui/dashboard/dashboard/kuesioner/hasil_evaluasi_page.dart';
 import 'package:portal_akademik_dosen/ui/dashboard/dashboard/kuesioner/kuesioner_kepuasan_page.dart';

@@ -38,6 +38,19 @@ class NetworkRepository {
     return await consumer.execute(url: '/akademik/jadwal/penting');
   }
 
+  // getRiwayatSemesterDosen() untuk mengambil data riwayat semester dosen
+  Future<ApiModel> getRiwayatSemesterDosen() async {
+    return await consumer.execute(
+        url: '/akademik/riwayatSemester/dosen/$username');
+  }
+
+  // getJadwalPerkuliahanPerSemester(semId) untuk mengambil data jadwal perkuliahan
+  // per semester
+  Future<ApiModel> getJadwalPerkuliahanPerSemester(String semId) async {
+    return await consumer.execute(
+        url: '/akademik/jadwal/dosen/kuliah/$username/$semId');
+  }
+
   // refreshToken() jika access token expired
   Future refreshToken() async {
     FormData formData = FormData.fromMap({
