@@ -5,6 +5,7 @@ import 'package:portal_akademik_dosen/ui/dashboard/drawer/drawer_navigator.dart'
 import 'package:portal_akademik_dosen/utils/color_pallete.dart';
 import 'package:portal_akademik_dosen/utils/widget/shimmer_widget.dart';
 
+import '../../../states/jadwal/state_dosen_riwayat_semester.dart';
 import '../../../states/state.dart';
 
 class DashboardPage extends StatefulWidget {
@@ -21,8 +22,12 @@ class _DashboardPageState extends State<DashboardPage> {
     DosenProfilState user =
         Provider.of<DosenProfilState>(context, listen: true);
 
+    DosenRiwayatSemesterState userRiwayatSemester =
+    Provider.of<DosenRiwayatSemesterState>(context, listen: true);
+
     Future<void> refresh() {
       user.refreshData();
+      userRiwayatSemester.refreshData();
       return user.refreshData();
     }
 

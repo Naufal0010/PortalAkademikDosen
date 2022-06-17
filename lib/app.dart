@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portal_akademik_dosen/states/jadwal/state_dosen_jadwal_penting.dart';
+import 'package:portal_akademik_dosen/states/jadwal/state_dosen_jadwal_uas.dart';
 import 'package:portal_akademik_dosen/states/jadwal/state_dosen_riwayat_semester.dart';
 import 'package:portal_akademik_dosen/states/jadwal/state_jadwal_perkuliahan_per_semester.dart';
 import 'package:portal_akademik_dosen/states/profil/state_dosen_profil.dart';
@@ -21,6 +22,7 @@ class App extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => DosenJadwalPentingState()),
         ChangeNotifierProvider(create: (_) => DosenRiwayatSemesterState()),
         ChangeNotifierProvider(create: (_) => DosenJadwalPerkuliahanPerSemesterState()),
+        ChangeNotifierProvider(create: (_) => DosenJadwalUasState()),
       ],
       child: GestureDetector(
         onTap: () {

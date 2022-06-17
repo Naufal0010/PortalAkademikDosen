@@ -51,6 +51,12 @@ class NetworkRepository {
         url: '/akademik/jadwal/dosen/kuliah/$username/$semId');
   }
 
+  // getJadwalUas(semId) untuk mengambil data jadwal uas dosen
+  Future<ApiModel> getJadwalUas(String semId) async {
+    return await consumer.execute(
+        url: '/akademik/jadwal/dosen/kuliah/$username/$semId');
+  }
+
   // refreshToken() jika access token expired
   Future refreshToken() async {
     FormData formData = FormData.fromMap({
