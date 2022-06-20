@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:portal_akademik_dosen/models/penawaran/model_penawaran_mk_dipilih.dart';
+import 'package:portal_akademik_dosen/ui/dashboard/dashboard/penawaran/component/subcomponent/list_subcomponent_penawaran_mata_kuliah_dosen.dart';
 import 'package:portal_akademik_dosen/utils/color_pallete.dart';
+import 'package:portal_akademik_dosen/utils/widget/shimmer_widget.dart';
+
+import '../../../../../states/penawaran/state_dosen_list_mata_kuliah_dipilih.dart';
+import '../../../../../states/state.dart';
 
 class BottmSheetPenawaranMataKuliah extends StatelessWidget {
   final TawarMataKuliah data;
@@ -10,6 +15,10 @@ class BottmSheetPenawaranMataKuliah extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    DosenListPenawaranMataKuliahDipilihState user =
+        Provider.of<DosenListPenawaranMataKuliahDipilihState>(context,
+            listen: false);
+
     Widget isJenisKuliah(String jenisKuliah) {
       if (jenisKuliah == 'P') {
         return Text(
@@ -22,6 +31,8 @@ class BottmSheetPenawaranMataKuliah extends StatelessWidget {
         style: TextStyle(fontSize: 12),
       );
     }
+
+    user.initData(data.idKls);
 
     return Padding(
       padding: EdgeInsets.all(16.0),
@@ -64,6 +75,20 @@ class BottmSheetPenawaranMataKuliah extends StatelessWidget {
           Text(
             '${data.sksTotal} SKS',
             style: TextStyle(fontSize: 12),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Text(
+            'Dosen',
+            style: TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
+          ),
+          Consumer<DosenListPenawaranMataKuliahDipilihState>(
+            builder: (context, value, child) {
+              return value.isLoading
+                  ? ShimmerWidget(width: 100, height: 20,)
+                  : ListMataKuliahDosenDipilih(context, value);
+            },
           ),
         ],
       ),

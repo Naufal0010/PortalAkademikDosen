@@ -74,6 +74,12 @@ class NetworkRepository {
         url: '/akademik/krs/matakuliahTawar/dosen/$paketTawar/$username');
   }
 
+  // getListDosenPenawaranMataKuliah(idKelas) untuk mengambil data list dosen
+  // dari mata kuliah yang dipilih
+  Future<ApiModel> getListDosenPenawaranMataKuliah(String idKelas) async {
+    return await consumer.execute(url: '/akademik/krs/matakuliahTawar/info/$idKelas');
+  }
+
   // refreshToken() jika access token expired
   Future refreshToken() async {
     FormData formData = FormData.fromMap({
