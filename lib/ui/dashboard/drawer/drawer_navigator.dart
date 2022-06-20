@@ -4,8 +4,8 @@ import 'package:portal_akademik_dosen/ui/dashboard/dashboard/dashboard_page.dart
 import 'package:portal_akademik_dosen/ui/dashboard/dashboard/jadwal/kalenderakademik/kalender_akademik_page.dart';
 import 'package:portal_akademik_dosen/ui/dashboard/dashboard/jadwal/perkuliahan/perkuliahan_page.dart';
 import 'package:portal_akademik_dosen/ui/dashboard/dashboard/jadwal/jadwaluas/ujian_akhir_semester_page.dart';
-import 'package:portal_akademik_dosen/ui/dashboard/dashboard/kuesioner/hasil_evaluasi_page.dart';
-import 'package:portal_akademik_dosen/ui/dashboard/dashboard/kuesioner/kuesioner_kepuasan_page.dart';
+import 'package:portal_akademik_dosen/ui/dashboard/dashboard/kuesioner/hasilevaluasidosen/hasil_evaluasi_page.dart';
+import 'package:portal_akademik_dosen/ui/dashboard/dashboard/kuesioner/kuesionerkepuasan/kuesioner_kepuasan_page.dart';
 import 'package:portal_akademik_dosen/ui/dashboard/dashboard/penawaran/penawaranMK_page.dart';
 import 'package:portal_akademik_dosen/ui/dashboard/dashboard/penilaian/riwayat_page.dart';
 import 'package:portal_akademik_dosen/ui/dashboard/dashboard/penilaian/semester_berjalan_page.dart';

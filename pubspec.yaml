@@ -28,6 +28,7 @@ dependencies:
   flutter_animated_dialog: ^2.0.1
   horizontal_data_table: ^3.6.1+1
   bottom_sheet: ^3.1.1
+  flutter_rating_bar: ^4.0.0
 
 dev_dependencies:
   flutter_test:

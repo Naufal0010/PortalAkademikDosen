@@ -3,6 +3,7 @@ import 'package:portal_akademik_dosen/models/profil/model_profil_dosen.dart';
 
 import '../../data/repository/network_repository.dart';
 import '../../models/model_api.dart';
+import '../../utils/api_local_store.dart';
 
 class DosenProfilState with ChangeNotifier, DiagnosticableTreeMixin {
   ModelProfilDosen? data;
@@ -18,6 +19,7 @@ class DosenProfilState with ChangeNotifier, DiagnosticableTreeMixin {
     final res = await NetworkRepository().getUser();
     if (res.code == CODE.SUCCESS) {
       data = ModelProfilDosen.fromMap(res.data);
+      ApiLocalStorage.modelProfilDosen = data;
       isLoading = false;
       notifyListeners();
     } else if (res.code == CODE.ERROR) {

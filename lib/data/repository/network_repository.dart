@@ -4,6 +4,7 @@ import 'package:portal_akademik_dosen/config/preference.dart';
 import 'package:portal_akademik_dosen/models/model_api.dart';
 import 'package:portal_akademik_dosen/utils/api/consumer.dart';
 
+import '../../models/kuesioner/model_dosen_kuesioner_kepuasan_simpan_data.dart';
 import '../../utils/service/util_preference.dart';
 
 /*
@@ -77,7 +78,31 @@ class NetworkRepository {
   // getListDosenPenawaranMataKuliah(idKelas) untuk mengambil data list dosen
   // dari mata kuliah yang dipilih
   Future<ApiModel> getListDosenPenawaranMataKuliah(String idKelas) async {
-    return await consumer.execute(url: '/akademik/krs/matakuliahTawar/info/$idKelas');
+    return await consumer.execute(
+        url: '/akademik/krs/matakuliahTawar/info/$idKelas');
+  }
+
+  // --------------------------------------------------------------------------
+
+  // ------------------------------ Kuesioner ---------------------------------
+
+  // getKuesionerKepuasanPenilaianDosen(nipDosen) untuk mengambil data list
+  // pertanyaan kuesioner kepuasan dosen
+  Future<ApiModel> getKuesionerKepuasanPenilaianDosen(String nipDosen) async {
+    return await consumer.execute(
+        url: '/akademik/kuisionerDosenPenilaian/dataKuisioner/$username');
+  }
+
+  // postTambahDataKuesionerKepuasanDosen(model...) untuk post data ke database
+  Future<ApiModel> postTambahDataKuesionerKepuasanDosen(
+      ModelDosenKuesionerKepuasanSimpanData
+          modelDosenKuesionerKepuasanSimpanData) async {
+    FormData formData =
+        FormData.fromMap(modelDosenKuesionerKepuasanSimpanData.toMap());
+    return await consumer.execute(
+        url: '/akademik/kuisionerDosenPenilaian/createBatchKuisionerDosen',
+        method: MethodRequest.POST,
+        formData: formData);
   }
 
   // refreshToken() jika access token expired

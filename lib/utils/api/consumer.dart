@@ -4,6 +4,7 @@ import 'package:portal_akademik_dosen/utils/api/dio_logging_interceptor.dart';
 import 'package:portal_akademik_dosen/utils/api/exception.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import '../../models/model.dart';
+import '../service/util_preference.dart';
 
 
 enum MethodRequest { GET, POST, PUT, DELETE }
@@ -67,7 +68,7 @@ class ApiConsumer {
         headers: {
           'AppId': appId,
           'X-ApiKey': apiKey,
-          'X-Token': apiToken,
+          'X-Token': UtilPreferences.getString('accessToken'),
         },
         baseUrl: apiUrl!,
         method: _convertMethod(method),
