@@ -57,6 +57,23 @@ class NetworkRepository {
         url: '/akademik/jadwal/dosen/kuliah/$username/$semId');
   }
 
+  // --------------------------------------------------------------------------
+
+  // -------------------- Penawaran Mata Kuliah -------------------------------
+
+  // getPenawaranMataKuliah() untuk mengambil data penawaran mata kuliah
+  Future<ApiModel> getPenawaranMataKuliah() async {
+    return await consumer.execute(
+        url: '/akademik/krs/semesterTawar/dosen/$username');
+  }
+
+  // getDosenPenawaranMataKuliah(paketTawar) untuk mengambil data mata kuliah
+  // penawaran sesuai paketTawar id
+  Future<ApiModel> getDosenPenawaranMataKuliah(String paketTawar) async {
+    return await consumer.execute(
+        url: '/akademik/krs/matakuliahTawar/dosen/$paketTawar/$username');
+  }
+
   // refreshToken() jika access token expired
   Future refreshToken() async {
     FormData formData = FormData.fromMap({

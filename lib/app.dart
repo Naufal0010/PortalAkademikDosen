@@ -3,6 +3,8 @@ import 'package:portal_akademik_dosen/states/jadwal/state_dosen_jadwal_penting.d
 import 'package:portal_akademik_dosen/states/jadwal/state_dosen_jadwal_uas.dart';
 import 'package:portal_akademik_dosen/states/jadwal/state_dosen_riwayat_semester.dart';
 import 'package:portal_akademik_dosen/states/jadwal/state_jadwal_perkuliahan_per_semester.dart';
+import 'package:portal_akademik_dosen/states/penawaran/state_dosen_penawaran_mata_kuliah.dart';
+import 'package:portal_akademik_dosen/states/penawaran/state_dosen_penawaran_mata_kuliah_dipilih.dart';
 import 'package:portal_akademik_dosen/states/profil/state_dosen_profil.dart';
 import 'package:portal_akademik_dosen/states/state.dart';
 import 'package:portal_akademik_dosen/ui/dashboard/dashboard/dashboard_page.dart';
@@ -23,6 +25,9 @@ class App extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => DosenRiwayatSemesterState()),
         ChangeNotifierProvider(create: (_) => DosenJadwalPerkuliahanPerSemesterState()),
         ChangeNotifierProvider(create: (_) => DosenJadwalUasState()),
+        ChangeNotifierProvider(create: (_) => DosenPenawaranMataKuliahState()),
+        ChangeNotifierProvider(create: (_) => DosenPenawaranMataKuliahDipilihState()),
+
       ],
       child: GestureDetector(
         onTap: () {
