@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portal_akademik_dosen/models/penawaran/model_penawaran_mk_dipilih.dart';
 import 'package:portal_akademik_dosen/ui/dashboard/dashboard/penawaran/component/subcomponent/list_subcomponent_penawaran_mata_kuliah_dosen.dart';
+import 'package:portal_akademik_dosen/ui/dashboard/dashboard/penawaran/component/subcomponent/list_subcomponent_penawaran_mata_kuliah_mkprasyarat.dart';
 import 'package:portal_akademik_dosen/utils/color_pallete.dart';
 import 'package:portal_akademik_dosen/utils/widget/shimmer_widget.dart';
 
@@ -88,6 +89,20 @@ class BottmSheetPenawaranMataKuliah extends StatelessWidget {
               return value.isLoading
                   ? ShimmerWidget(width: 100, height: 20,)
                   : ListMataKuliahDosenDipilih(context, value);
+            },
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Text(
+            'Prasyarat',
+            style: TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
+          ),
+          Consumer<DosenListPenawaranMataKuliahDipilihState>(
+            builder: (context, value, child) {
+              return value.isLoading
+                  ? ShimmerWidget(width: 100, height: 20,)
+                  : ListMataKuliahDosenDipilihMkPrasyarat(context, value);
             },
           ),
         ],
