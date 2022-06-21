@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:portal_akademik_dosen/ui/dashboard/dashboard/kuesioner/hasilevaluasidosen/subpages/detail/hasil_evaluasi_dosen_detail.dart';
 import 'package:portal_akademik_dosen/utils/color_pallete.dart';
 
 import '../../../../../../models/kuesioner/model_dosen_hasil_evaluasi_kuesioner.dart';
+import '../subpages/saran/hasil_evaluasi_dosen_saran.dart';
 
 class BottomSheetHasilEvaluasiDosen extends StatelessWidget {
   final HasilEvaluasi data;
@@ -77,6 +79,42 @@ class BottomSheetHasilEvaluasiDosen extends StatelessWidget {
                 style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
               ),
             ],
+          ),
+          SizedBox(height: 8,),
+          SizedBox(
+            width: MediaQuery.of(context).size.width,
+            height: 40,
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => HasilEvaluasiDosenDetail(data: data,)));
+              },
+              child: Text(
+                'Detail',
+                style: TextStyle(fontSize: 14),
+              ),
+              style: ElevatedButton.styleFrom(
+                  primary: Colors.deepPurpleAccent,
+                  onPrimary: Colors.white),
+            ),
+          ),
+          SizedBox(height: 8,),
+          SizedBox(
+            width: MediaQuery.of(context).size.width,
+            height: 40,
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => HasilEvaluasiDosenSaran()));
+              },
+              child: Text(
+                'Saran',
+                style: TextStyle(fontSize: 14),
+              ),
+              style: ElevatedButton.styleFrom(
+                  primary: ColorPallete.primary,
+                  onPrimary: Colors.white),
+            ),
           ),
         ],
       ),

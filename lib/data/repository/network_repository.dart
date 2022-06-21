@@ -118,6 +118,14 @@ class NetworkRepository {
             '/akademik/kuisionerPenilaian/hasilKuisionerMahasiswa/$semId/$username');
   }
 
+  // getDataHasilKuesionerDosenDetail(kelasId) untuk mengambil data hasil
+  // kuesioner detail sesuai kelasId
+  Future<ApiModel> getDataHasilKuesionerDosenDetail(String kelasId) async {
+    return await consumer.execute(
+        url:
+            '/akademik/kuisionerPenilaian/hasilKuisionerMahasiswaDetail/$kelasId/$username');
+  }
+
   // refreshToken() jika access token expired
   Future refreshToken() async {
     FormData formData = FormData.fromMap({
