@@ -1,4 +1,6 @@
+import 'package:bottom_sheet/bottom_sheet.dart';
 import 'package:flutter/material.dart';
+import 'package:portal_akademik_dosen/ui/dashboard/dashboard/kuesioner/hasilevaluasidosen/component/hasil_evaluasi_dosen_bottomsheet.dart';
 
 import '../../../../../../models/kuesioner/model_dosen_hasil_evaluasi_kuesioner.dart';
 import '../../../../../../utils/color_pallete.dart';
@@ -19,21 +21,21 @@ class HasilEvaluasiDosenListTile extends StatelessWidget {
         ),
         child: InkWell(
           onTap: () {
-            // showFlexibleBottomSheet(
-            //     decoration: BoxDecoration(
-            //         color: Colors.white,
-            //         borderRadius: BorderRadius.only(
-            //             topRight: Radius.circular(10.0),
-            //             topLeft: Radius.circular(10.0))),
-            //     isExpand: false,
-            //     initHeight: 0.7,
-            //     maxHeight: 0.7,
-            //     context: context,
-            //     bottomSheetColor: Colors.transparent,
-            //     builder: (context, controller, offset) {
-            //       return BottmSheetPenawaranMataKuliah(
-            //           data: data, controller: controller);
-            //     });
+            showFlexibleBottomSheet(
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(10.0),
+                        topLeft: Radius.circular(10.0))),
+                isExpand: false,
+                initHeight: 0.7,
+                maxHeight: 0.7,
+                context: context,
+                bottomSheetColor: Colors.transparent,
+                builder: (context, controller, offset) {
+                  return BottomSheetHasilEvaluasiDosen(
+                      data: data, controller: controller);
+                });
           },
           splashColor: ColorPallete.primary,
           borderRadius: BorderRadius.all(Radius.circular(6)),
