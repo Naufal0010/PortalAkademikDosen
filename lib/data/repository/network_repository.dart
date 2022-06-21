@@ -105,6 +105,19 @@ class NetworkRepository {
         formData: formData);
   }
 
+  // getSemesterDosenAmpu() untuk mengambil data semester yang dosen ampu
+  Future<ApiModel> getSemesterDosenAmpu() async {
+    return await consumer.execute(
+        url: '/akademik/dosenAmpu/SemesterAmpu/$username');
+  }
+
+  // getDataHasilKuesionerDosen(semId) untuk mengambil data hasil kuesioner dosen
+  Future<ApiModel> getDataHasilKuesionerDosen(String semId) async {
+    return await consumer.execute(
+        url:
+            '/akademik/kuisionerPenilaian/hasilKuisionerMahasiswa/$semId/$username');
+  }
+
   // refreshToken() jika access token expired
   Future refreshToken() async {
     FormData formData = FormData.fromMap({
