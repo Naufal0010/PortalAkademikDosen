@@ -105,7 +105,7 @@ class BottomSheetHasilEvaluasiDosen extends StatelessWidget {
             child: ElevatedButton(
               onPressed: () {
                 Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => HasilEvaluasiDosenSaran()));
+                    MaterialPageRoute(builder: (context) => HasilEvaluasiDosenSaran(data: data)));
               },
               child: Text(
                 'Saran',

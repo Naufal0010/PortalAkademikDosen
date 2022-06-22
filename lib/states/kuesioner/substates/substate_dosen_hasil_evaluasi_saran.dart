@@ -1,22 +1,23 @@
 import 'package:flutter/foundation.dart';
+import 'package:portal_akademik_dosen/models/kuesioner/submodel/modelsaran/submodel_dosen_hasil_evaluasi_saran.dart';
 
 import '../../../data/repository/network_repository.dart';
-import '../../../models/kuesioner/submodel/modeldetail/submodel_dosen_hasil_evaluasi_detail.dart';
 import '../../../models/model_api.dart';
 import '../../../utils/service/logger.dart';
 
-class DosenHasilEvaluasiSubState with ChangeNotifier, DiagnosticableTreeMixin {
-  SubModelDosenHasilEvaluasiKuesioner? data;
+class DosenHasilEvaluasiSaranSubState with ChangeNotifier, DiagnosticableTreeMixin {
+  SubModelDosenHasilEvaluasiKuesionerSaran? data;
   Map<String, dynamic>? error;
   String errorMessage = '';
+  String kelasId = '';
   bool isLoading = true;
 
   Future<void> initData(String kelasId) async {
     final res =
-        await NetworkRepository().getDataHasilKuesionerDosenDetail(kelasId);
+    await NetworkRepository().getDataHasilKuesionerDosenSaran(kelasId);
     if (res.code == CODE.SUCCESS) {
-      data = SubModelDosenHasilEvaluasiKuesioner.fromMap(res.data);
-      UtilLogger.log('Data Hasil Kuesioner Detail', data!.toJson());
+      data = SubModelDosenHasilEvaluasiKuesionerSaran.fromMap(res.data);
+      UtilLogger.log('Data Hasil Kuesioner Saran', data!.toJson());
       isLoading = false;
       notifyListeners();
     } else if (res.code == CODE.ERROR){
@@ -25,6 +26,7 @@ class DosenHasilEvaluasiSubState with ChangeNotifier, DiagnosticableTreeMixin {
       notifyListeners();
     } else {
       isLoading = false;
+      error = res.message;
       errorMessage = res.message;
       notifyListeners();
     }

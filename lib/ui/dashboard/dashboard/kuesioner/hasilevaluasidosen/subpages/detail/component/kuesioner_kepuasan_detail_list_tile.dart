@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../../../../models/kuesioner/submodel/submodel_dosen_hasil_evaluasi_detail.dart';
+import '../../../../../../../../models/kuesioner/submodel/modeldetail/submodel_dosen_hasil_evaluasi_detail.dart';
 import '../../../../../../../../utils/color_pallete.dart';
 
 class KuesionerKepuasanDetailListTile extends StatelessWidget {
