@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portal_akademik_dosen/states/jadwal/state_dosen_jadwal_penting.dart';
 import 'package:portal_akademik_dosen/states/profil/state_dosen_profil.dart';
 import 'package:portal_akademik_dosen/ui/dashboard/dashboard/component/handler/exception_handle_dashboard.dart';
 import 'package:portal_akademik_dosen/ui/dashboard/drawer/drawer_navigator.dart';
@@ -19,6 +20,16 @@ class DashboardPage extends StatefulWidget {
 }
 
 class _DashboardPageState extends State<DashboardPage> {
+
+  @override
+  void initState() {
+    super.initState();
+    DosenJadwalPentingState dosenJadwal =
+    Provider.of<DosenJadwalPentingState>(context, listen: false);
+    dosenJadwal.initDataFirst(context);
+
+  }
+
   @override
   Widget build(BuildContext context) {
     DosenProfilState user =
