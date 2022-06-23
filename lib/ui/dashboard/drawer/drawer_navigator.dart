@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animated_dialog/flutter_animated_dialog.dart';
-import 'package:portal_akademik_dosen/ui/dashboard/dashboard/dashboard_page.dart';
 import 'package:portal_akademik_dosen/ui/dashboard/dashboard/jadwal/kalenderakademik/kalender_akademik_page.dart';
 import 'package:portal_akademik_dosen/ui/dashboard/dashboard/jadwal/perkuliahan/perkuliahan_page.dart';
 import 'package:portal_akademik_dosen/ui/dashboard/dashboard/jadwal/jadwaluas/ujian_akhir_semester_page.dart';
@@ -224,8 +223,7 @@ class _DrawerNavigatorState extends State<DrawerNavigator> {
 
     switch (index) {
       case 0:
-        Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) => const DashboardPage()),
+        Navigator.popUntil(context, (route) => route.isActive
         );
         break;
       case 1:

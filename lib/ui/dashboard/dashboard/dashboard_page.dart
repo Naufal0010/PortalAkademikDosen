@@ -51,6 +51,11 @@ class _DashboardPageState extends State<DashboardPage> {
     return Scaffold(
       drawer: const DrawerNavigator(),
       appBar: AppBar(
+        centerTitle: true,
+        title: Text('Beranda',
+            style: TextStyle(
+                color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold),
+            overflow: TextOverflow.ellipsis),
         elevation: 0,
         backgroundColor: Colors.white,
         iconTheme: const IconThemeData(color: Colors.black),
