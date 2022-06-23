@@ -58,6 +58,11 @@ class NetworkRepository {
         url: '/akademik/jadwal/dosen/kuliah/$username/$semId');
   }
 
+  // getSemesterAktif() untuk mengambil data semester aktif sekarang
+  Future<ApiModel> getSemesterAktif() async {
+    return await consumer.execute(url: '/akademik/event/semester_aktif');
+  }
+
   // --------------------------------------------------------------------------
 
   // -------------------- Penawaran Mata Kuliah -------------------------------

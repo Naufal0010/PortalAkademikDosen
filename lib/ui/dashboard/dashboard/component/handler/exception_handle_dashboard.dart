@@ -14,7 +14,7 @@ Widget getPhotoDosen(BuildContext context, DosenProfilState state) {
         fontSize: 16.0);
 
     return CircleAvatar(
-      radius: 30,
+      radius: 20,
       backgroundColor: Colors.grey,
       foregroundColor: Colors.grey,
     );
@@ -22,20 +22,20 @@ Widget getPhotoDosen(BuildContext context, DosenProfilState state) {
 
   if (state.data?.foto == null) {
     return CircleAvatar(
-      radius: 30,
+      radius: 20,
       backgroundColor: Colors.grey,
       foregroundColor: Colors.grey,
     );
   }
 
   return SizedBox(
-    width: double.infinity,
+    width: 100,
     child: CircleAvatar(
-      radius: 70,
+      radius: 32,
       backgroundColor: Colors.grey,
       foregroundColor: Colors.grey,
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(70),
+        borderRadius: BorderRadius.circular(32),
         child: Image.network(
             'https://portal.ulm.ac.id/uploads/${state.data?.foto}'),
       ),
@@ -57,7 +57,7 @@ Widget getNameDosen(BuildContext context, DosenProfilState state) {
   return Text(
     state.data!.nama,
     style: TextStyle(
-      fontSize: 24.0,
+      fontSize: 16.0,
       fontWeight: FontWeight.bold,
     ),
   );
@@ -77,7 +77,7 @@ Widget getNipDosen(BuildContext context, DosenProfilState state) {
   return Text(
     'NIP. ${state.data!.nip}',
     style: TextStyle(
-      fontSize: 20.0,
+      fontSize: 14.0,
     ),
   );
 }
@@ -96,7 +96,7 @@ Widget getJabatanDosen(BuildContext context, DosenProfilState state) {
   return Text(
     state.data!.statuDosen,
     style: TextStyle(
-      fontSize: 15.0,
+      fontSize: 14.0,
     ),
   );
 }
@@ -115,7 +115,7 @@ Widget getFakultasDosen(BuildContext context, DosenProfilState state) {
   return Text(
     state.data!.fakultas!.namaResmi,
     style: TextStyle(
-      fontSize: 15.0,
+      fontSize: 14.0,
     ),
   );
 }
@@ -133,6 +133,6 @@ Widget getProgramStudiDosen(BuildContext context, DosenProfilState state) {
 
   return Text(
     '${state.data!.prodi!.jenjang} - ${state.data!.prodi!.nama}',
-    style: TextStyle(fontSize: 15),
+    style: TextStyle(fontSize: 14),
   );
 }

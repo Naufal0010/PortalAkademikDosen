@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:portal_akademik_dosen/states/jadwal/state_dosen_jadwal_penting.dart';
 import 'package:portal_akademik_dosen/states/jadwal/state_dosen_jadwal_uas.dart';
 import 'package:portal_akademik_dosen/states/jadwal/state_dosen_riwayat_semester.dart';
+import 'package:portal_akademik_dosen/states/jadwal/state_dosen_semester_aktif.dart';
+import 'package:portal_akademik_dosen/states/jadwal/state_jadwal_perkuliahan_hari_ini.dart';
 import 'package:portal_akademik_dosen/states/jadwal/state_jadwal_perkuliahan_per_semester.dart';
 import 'package:portal_akademik_dosen/states/kuesioner/state_dosen_hasil_evaluasi_kuesioner.dart';
 import 'package:portal_akademik_dosen/states/kuesioner/state_dosen_kuesioner_kepuasan.dart';
@@ -39,6 +41,9 @@ class App extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => DosenHasilEvaluasiKuesionerState()),
         ChangeNotifierProvider(create: (_) => DosenHasilEvaluasiSubState()),
         ChangeNotifierProvider(create: (_) => DosenHasilEvaluasiSaranSubState()),
+        ChangeNotifierProvider(create: (_) => DosenSemesterAktifState()),
+        ChangeNotifierProvider(create: (_) => DosenJadwalPerkuliahanHariIniState()),
+
       ],
       child: GestureDetector(
         onTap: () {

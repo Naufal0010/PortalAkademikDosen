@@ -5,7 +5,7 @@ class ModelJadwalPerkuliahanPerSemester {
     required this.data,
   });
 
-  final List<JadwalPerkuliahan>? data;
+  List<JadwalPerkuliahan>? data;
 
   factory ModelJadwalPerkuliahanPerSemester.fromJson(String str) => ModelJadwalPerkuliahanPerSemester.fromMap(json.decode(str));
 

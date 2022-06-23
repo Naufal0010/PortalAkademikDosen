@@ -23,12 +23,14 @@ dependencies:
   pretty_dio_logger: ^1.1.1
   dio_log: ^2.0.2
   flutter_html: ^2.2.1
+  intl: ^0.17.0
 
   simple_fontellico_progress_dialog: ^0.2.1
   flutter_animated_dialog: ^2.0.1
   horizontal_data_table: ^3.6.1+1
   bottom_sheet: ^3.1.1
   flutter_rating_bar: ^4.0.0
+  carousel_slider: ^4.0.0
 
 dev_dependencies:
   flutter_test:
