@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ptik.portal_akademik_dosen">
    <application
-        android:label="portal_akademik_dosen"
+        android:label="Portal Akademik Dosen"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
