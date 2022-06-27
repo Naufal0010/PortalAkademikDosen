@@ -24,7 +24,7 @@ class BottomSheetPerwalianMahasiswa extends StatelessWidget {
             style: TextStyle(fontSize: 12, color: ColorPallete.primary),
           ),
           Text(
-            data.nama,
+            data.nama!,
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
           ),
           SizedBox(
@@ -50,7 +50,7 @@ class BottomSheetPerwalianMahasiswa extends StatelessWidget {
                 //     MaterialPageRoute(builder: (context) => HasilEvaluasiDosenDetail(data: data,)));
               },
               child: Text(
-                'Detail',
+                'Hasil Studi',
                 style: TextStyle(fontSize: 14),
               ),
               style: ElevatedButton.styleFrom(
@@ -68,7 +68,7 @@ class BottomSheetPerwalianMahasiswa extends StatelessWidget {
                 //     MaterialPageRoute(builder: (context) => HasilEvaluasiDosenSaran(data: data)));
               },
               child: Text(
-                'Saran',
+                'Transkrip Nilai',
                 style: TextStyle(fontSize: 14),
               ),
               style: ElevatedButton.styleFrom(

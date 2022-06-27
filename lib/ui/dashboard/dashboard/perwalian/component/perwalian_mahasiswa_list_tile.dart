@@ -49,13 +49,13 @@ class PerwalianMahasiswaListTile extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      data.nim,
+                      data.nim!,
                       style: TextStyle(color: ColorPallete.primary),
                     ),
                     SizedBox(
                         width: 220,
                         child: Text(
-                          data.nama,
+                          data.nama!,
                           style: TextStyle(fontWeight: FontWeight.bold),
                         )),
                     Text(

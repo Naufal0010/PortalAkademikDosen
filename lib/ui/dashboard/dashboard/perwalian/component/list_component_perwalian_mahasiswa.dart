@@ -30,7 +30,7 @@ Widget ListPerwalianMahasiswa(
     );
   }
 
-  if (state.data!.data == null) {
+  if (state.data!.data!.rows!.isEmpty) {
     return Container(
         width: MediaQuery.of(context).size.width,
         height: 500,

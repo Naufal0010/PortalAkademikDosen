@@ -12,7 +12,7 @@ class ModelDosenPerwalianMahasiswa {
   String toJson() => json.encode(toMap());
 
   factory ModelDosenPerwalianMahasiswa.fromMap(Map<String, dynamic> json) => ModelDosenPerwalianMahasiswa(
-    data: json["data"] == null ? null : Data.fromMap(json["data"]),
+    data: json == null ? null : Data.fromMap(json),
   );
 
   Map<String, dynamic> toMap() => {
@@ -27,7 +27,7 @@ class Data {
     required this.offset,
   });
 
-  final List<RowMahasiswa>? rows;
+  List<RowMahasiswa>? rows;
   final int limit;
   final int offset;
 
@@ -109,15 +109,15 @@ class KrsMahasiswaPerwalian {
     required this.isSelesaiRevisi,
   });
 
-  final double id;
-  final int semId;
-  final String mhsNiu;
-  final int isKirim;
-  final int isRevisi;
-  final int isSetuju;
+  final double? id;
+  final int? semId;
+  final String? mhsNiu;
+  final int? isKirim;
+  final int? isRevisi;
+  final int? isSetuju;
   final DateTime? waktuIsi;
-  final String userPengisi;
-  final int isSelesaiRevisi;
+  final String? userPengisi;
+  final int? isSelesaiRevisi;
 
   factory KrsMahasiswaPerwalian.fromJson(String str) => KrsMahasiswaPerwalian.fromMap(json.decode(str));
 
@@ -220,25 +220,25 @@ class MahasiswaPerwalian {
     required this.statusAjukanReset,
   });
 
-  final String nik;
-  final String nim;
-  final String foto;
-  final String nama;
-  final String nisn;
-  final String noHp;
-  final String npwp;
+  final String? nik;
+  final String? nim;
+  final String? foto;
+  final String? nama;
+  final String? nisn;
+  final String? noHp;
+  final String? npwp;
   final dynamic s1Pt;
-  final String email;
+  final String? email;
   final int kurId;
   final dynamic s1Ipk;
   final int wnrId;
   final int agmrId;
   final dynamic ijazah;
   final int jnspen;
-  final String noTelp;
+  final String? noTelp;
   final int isAsing;
-  final String kodePos;
-  final String ngrKode;
+  final String? kodePos;
+  final String? ngrKode;
   final dynamic niuLama;
   final dynamic s1Gelar;
   final dynamic s1Prodi;
@@ -246,19 +246,19 @@ class MahasiswaPerwalian {
   final int semAwal;
   final int stnkrId;
   final int angkatan;
-  final String asalSmta;
-  final String beasiswa;
+  final String? asalSmta;
+  final String? beasiswa;
   final dynamic feedback;
-  final String golDarah;
-  final String homepage;
-  final String jlrrKode;
-  final String kotaKode;
-  final String nomorTes;
+  final String? golDarah;
+  final String? homepage;
+  final String? jlrrKode;
+  final String? kotaKode;
+  final String? nomorTes;
   final int agreement;
-  final String alamatMhs;
+  final String? alamatMhs;
   final DateTime? createdAt;
-  final String kecamatan;
-  final String kelurahan;
+  final String? kecamatan;
+  final String? kelurahan;
   final int kodeProdi;
   final DateTime? updatedAt;
   final int beratBadan;
@@ -270,11 +270,11 @@ class MahasiswaPerwalian {
   final double rataNilaiUn;
   final int statrumahId;
   final int tinggiBadan;
-  final String usernameSia;
+  final String? usernameSia;
   final dynamic isVerifikasi;
   final String jenisKelamin;
   final String ortuPassword;
-  final String reservasiPin;
+  final String? reservasiPin;
   final dynamic s1TahunMasuk;
   final dynamic s1TahunTamat;
   final String smtaKotaKode;
@@ -305,7 +305,7 @@ class MahasiswaPerwalian {
     email: json["email"] == null ? null : json["email"],
     kurId: json["kurId"] == null ? null : json["kurId"],
     s1Ipk: json["s1IPK"],
-    wnrId: json["wnrId"] == null ? null : json["wnrId"],
+    wnrId: json["wnrId"] == null ? 0 : json["wnrId"],
     agmrId: json["agmrId"] == null ? null : json["agmrId"],
     ijazah: json["ijazah"],
     jnspen: json["jnspen"] == null ? null : json["jnspen"],
@@ -316,7 +316,7 @@ class MahasiswaPerwalian {
     niuLama: json["niuLama"],
     s1Gelar: json["s1Gelar"],
     s1Prodi: json["s1Prodi"],
-    sbdnrId: json["sbdnrId"] == null ? null : json["sbdnrId"],
+    sbdnrId: json["sbdnrId"] == null ? 0 : json["sbdnrId"],
     semAwal: json["semAwal"] == null ? null : json["semAwal"],
     stnkrId: json["stnkrId"] == null ? null : json["stnkrId"],
     angkatan: json["angkatan"] == null ? null : json["angkatan"],
@@ -451,17 +451,17 @@ class StatusBayar {
     required this.isKeringananUkt,
   });
 
-  final String mhsNim;
+  final String? mhsNim;
   final dynamic channel;
   final dynamic jatakSks;
-  final String jnsBayar;
+  final String? jnsBayar;
   final dynamic namaBank;
   final dynamic isBeasiswa;
-  final int semesterId;
-  final int totalBayar;
+  final int? semesterId;
+  final int? totalBayar;
   final dynamic kodeTerminal;
   final DateTime? tanggalBayar;
-  final int isKeringananUkt;
+  final int? isKeringananUkt;
 
   factory StatusBayar.fromJson(String str) => StatusBayar.fromMap(json.decode(str));
 

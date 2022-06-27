@@ -13,10 +13,6 @@ class DosenPerwalianMahasiswaState
   String errorMessage = '';
   bool isLoading = true;
 
-  DosenPerwalianMahasiswaState() {
-    initData();
-  }
-
   Future<void> initData() async {
     final res = await NetworkRepository().getPerwalianMahasiswa(
         ApiLocalStorage.modelDosenSemesterAktif!.semesterAktif!.kode);
@@ -36,12 +32,108 @@ class DosenPerwalianMahasiswaState
     }
   }
 
+  Future<void> initDataRegistrasi() async {
+    final res = await NetworkRepository().getPerwalianMahasiswa(
+        ApiLocalStorage.modelDosenSemesterAktif!.semesterAktif!.kode);
+    if (res.code == CODE.SUCCESS) {
+      data = ModelDosenPerwalianMahasiswa.fromMap(res.data);
+      data!.data!.rows = data!.data!.rows!
+          .where((element) =>
+              element.statusBayar!.jnsBayar == 'Lunas' &&
+              element.krs!.isKirim == null &&
+              element.krs!.isSetuju == null)
+          .toList();
+      UtilLogger.log('Perwalian', data!.toJson());
+      isLoading = false;
+      notifyListeners();
+    } else if (res.code == CODE.ERROR) {
+      isLoading = false;
+      error = res.message;
+      notifyListeners();
+    } else {
+      isLoading = false;
+      errorMessage = res.message;
+      notifyListeners();
+    }
+  }
+
+  Future<void> initDataKirimKrs() async {
+    final res = await NetworkRepository().getPerwalianMahasiswa(
+        ApiLocalStorage.modelDosenSemesterAktif!.semesterAktif!.kode);
+    if (res.code == CODE.SUCCESS) {
+      data = ModelDosenPerwalianMahasiswa.fromMap(res.data);
+      data!.data!.rows = data!.data!.rows!
+          .where((element) =>
+              element.statusBayar!.jnsBayar == 'Lunas' &&
+              element.krs!.isKirim == 1 &&
+              element.krs!.isSetuju == 0)
+          .toList();
+      UtilLogger.log('Perwalian', data!.toJson());
+      isLoading = false;
+      notifyListeners();
+    } else if (res.code == CODE.ERROR) {
+      isLoading = false;
+      error = res.message;
+      notifyListeners();
+    } else {
+      isLoading = false;
+      errorMessage = res.message;
+      notifyListeners();
+    }
+  }
+
+  Future<void> initDataKrsDisetujui() async {
+    final res = await NetworkRepository().getPerwalianMahasiswa(
+        ApiLocalStorage.modelDosenSemesterAktif!.semesterAktif!.kode);
+    if (res.code == CODE.SUCCESS) {
+      data = ModelDosenPerwalianMahasiswa.fromMap(res.data);
+      data!.data!.rows = data!.data!.rows!
+          .where((element) =>
+              element.statusBayar!.jnsBayar == 'Lunas' &&
+              element.krs!.isKirim == 1 &&
+              element.krs!.isSetuju == 1)
+          .toList();
+      UtilLogger.log('Perwalian', data!.toJson());
+      isLoading = false;
+      notifyListeners();
+    } else if (res.code == CODE.ERROR) {
+      isLoading = false;
+      error = res.message;
+      notifyListeners();
+    } else {
+      isLoading = false;
+      errorMessage = res.message;
+      notifyListeners();
+    }
+  }
+
+  Future<void> initDataRevisi() async {
+    final res = await NetworkRepository().getPerwalianMahasiswa(
+        ApiLocalStorage.modelDosenSemesterAktif!.semesterAktif!.kode);
+    if (res.code == CODE.SUCCESS) {
+      data = ModelDosenPerwalianMahasiswa.fromMap(res.data);
+      data!.data!.rows = data!.data!.rows!
+          .where((element) => element.krs!.isRevisi == 1)
+          .toList();
+      UtilLogger.log('Perwalian', data!.toJson());
+      isLoading = false;
+      notifyListeners();
+    } else if (res.code == CODE.ERROR) {
+      isLoading = false;
+      error = res.message;
+      notifyListeners();
+    } else {
+      isLoading = false;
+      errorMessage = res.message;
+      notifyListeners();
+    }
+  }
+
   Future<void> refreshData() async {
     error = null;
     data = null;
     isLoading = true;
     notifyListeners();
-    initData();
   }
 
   /// Makes `Counter` readable inside the devtools by listing all of its properties
