@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:portal_akademik_dosen/ui/dashboard/drawer/drawer_navigator.dart';
 
 class RiwayatPage extends StatelessWidget {
   @override

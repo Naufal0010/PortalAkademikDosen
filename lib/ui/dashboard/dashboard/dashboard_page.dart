@@ -56,7 +56,7 @@ class _DashboardPageState extends State<DashboardPage> {
     }
 
     semesterAktif.isLoading
-        ? null
+        ? ''
         : jadwal.initData(semesterAktif.data!.semesterAktif!.kode);
 
     return Scaffold(

@@ -13,6 +13,7 @@ import 'package:portal_akademik_dosen/states/kuesioner/substates/substate_dosen_
 import 'package:portal_akademik_dosen/states/penawaran/state_dosen_list_mata_kuliah_dipilih.dart';
 import 'package:portal_akademik_dosen/states/penawaran/state_dosen_penawaran_mata_kuliah.dart';
 import 'package:portal_akademik_dosen/states/penawaran/state_dosen_penawaran_mata_kuliah_dipilih.dart';
+import 'package:portal_akademik_dosen/states/perwalian/state_dosen_perwalian_mahasiswa.dart';
 import 'package:portal_akademik_dosen/states/profil/state_dosen_profil.dart';
 import 'package:portal_akademik_dosen/states/state.dart';
 import 'package:portal_akademik_dosen/ui/dashboard/dashboard/dashboard_page.dart';
@@ -43,6 +44,7 @@ class App extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => DosenHasilEvaluasiSaranSubState()),
         ChangeNotifierProvider(create: (_) => DosenSemesterAktifState()),
         ChangeNotifierProvider(create: (_) => DosenJadwalPerkuliahanHariIniState()),
+        ChangeNotifierProvider(create: (_) => DosenPerwalianMahasiswaState()),
 
       ],
       child: GestureDetector(

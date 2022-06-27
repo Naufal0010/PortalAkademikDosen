@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:portal_akademik_dosen/states/jadwal/state_dosen_jadwal_uas.dart';
-import 'package:portal_akademik_dosen/ui/dashboard/dashboard/jadwal/jadwaluas/component/list_jadwal_uas.dart';
 
 import '../../../../../states/jadwal/state_dosen_riwayat_semester.dart';
 import '../../../../../states/state.dart';
 import '../../../../../utils/widget/shimmer_list_tile.dart';
 import '../../../../../utils/widget/shimmer_widget.dart';
+import 'component/list_jadwal_uas.dart';
 
 class UASPage extends StatelessWidget {
   @override

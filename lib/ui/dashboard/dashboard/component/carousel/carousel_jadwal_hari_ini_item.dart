@@ -52,7 +52,7 @@ class CarouselJadwalHarIni extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
-                  width: 200,
+                  width: 180,
                   child: Text(
                     data.mk,
                     maxLines: 2,
@@ -82,7 +82,7 @@ class CarouselJadwalHarIni extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  width: 200,
+                  width: 180,
                   child: Text(
                     'Prodi: ${data.namaProdi}',
                     maxLines: 2,
@@ -93,7 +93,7 @@ class CarouselJadwalHarIni extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  width: 200,
+                  width: 180,
                   child: Text(
                     '${data.sks} SKS',
                     maxLines: 2,
@@ -104,7 +104,7 @@ class CarouselJadwalHarIni extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  width: 200,
+                  width: 180,
                   child: Text(
                     '${data.hari}, ${data.jam}',
                     maxLines: 2,

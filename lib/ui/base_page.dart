@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:portal_akademik_dosen/ui/dashboard/dashboard/dashboard_page.dart';
-import 'package:portal_akademik_dosen/ui/dashboard/drawer/drawer_navigator.dart';
+
+import 'dashboard/dashboard/dashboard_page.dart';
+import 'dashboard/drawer/drawer_navigator.dart';
 
 class BasePage extends StatefulWidget {
 

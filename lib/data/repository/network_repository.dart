@@ -32,6 +32,18 @@ class NetworkRepository {
             '/simpeg/dosen/$username?with[]=prodi&with[]=jurusan&with[]=fakultas');
   }
 
+  // ------------------------------- Perwalian -------------------------------
+
+  // getPerwalianMahasiswa(semesterAktif) untuk mengambil data perwalian
+  // mahasiswa
+  Future<ApiModel> getPerwalianMahasiswa(String semesterAktif) async {
+    return await consumer.execute(
+        url:
+            '/akademik/perwalian?semester[eq]=$semesterAktif&nip[eq]=$username&with[]=mahasiswa&with[]=krs&with[]=statusBayar');
+  }
+
+  // -------------------------------------------------------------------------
+
   // ----------------------------- Jadwal Dosen ------------------------------
 
   // getJadwaPentingDosen() untuk mengambil data jadwal penting dosen
